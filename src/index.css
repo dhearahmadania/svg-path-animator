@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", monospace;
+}
+
+html {
+  color-scheme: dark;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #09090b;
+  font-family: var(--font-sans);
+}
+
+#root {
+  min-height: 100%;
+}
+
+::selection {
+  background: rgba(129, 140, 248, 0.35);
+}
+
+@keyframes svg-draw {
+  from {
+    stroke-dashoffset: var(--path-length);
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.toast-in {
+  animation: toast-in 180ms ease-out;
+}
+
+input[type="range"] {
+  appearance: none;
+  height: 4px;
+  border-radius: 999px;
+  outline: none;
+}
+
+input[type="range"]:focus-visible {
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.35);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: #eef2ff;
+  border: 2px solid #818cf8;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.18);
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: none;
+  border-radius: 999px;
+  background: #eef2ff;
+  box-shadow: 0 0 0 2px #818cf8, 0 0 0 6px rgba(99, 102, 241, 0.18);
+  cursor: pointer;
+}
